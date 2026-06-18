@@ -68,7 +68,7 @@ export default function PrecosPage() {
     <main className="min-h-screen" style={{ background: 'var(--background)' }}>
       <nav className="flex items-center justify-between px-6 py-5 border-b" style={{ borderColor: 'var(--card-border)' }}>
         <Link href="/" className="inline-block">
-          <Image src="/evolve-logo.svg" alt="Evolve Studio" width={130} height={31} priority />
+          <Image src="/evolve-logo-claim.png" alt="Evolve Studio" width={130} height={31} priority />
         </Link>
         <div className="flex items-center gap-4">
           <Link href="/login" className="text-sm" style={{ color: 'var(--muted-foreground)' }}>Entrar</Link>

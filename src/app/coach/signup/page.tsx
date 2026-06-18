@@ -27,7 +27,7 @@ export default function CoachSignupPage() {
         {/* Header */}
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
-            <Image src="/evolve-logo.svg" alt="Evolve Studio" width={160} height={38} priority />
+            <Image src="/evolve-logo-claim.png" alt="Evolve Studio" width={160} height={38} priority />
           </Link>
           <div className="mt-4">
             <span

@@ -25,7 +25,7 @@ export default function SignupPage() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-10">
           <Link href="/" className="inline-block">
-            <Image src="/evolve-logo.svg" alt="Evolve Studio" width={160} height={38} priority />
+            <Image src="/evolve-logo-claim.png" alt="Evolve Studio" width={160} height={38} priority />
           </Link>
           <p className="mt-2 text-sm" style={{ color: 'var(--muted-foreground)' }}>
             Cria a tua conta

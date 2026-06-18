@@ -119,7 +119,7 @@ export default function HomePage() {
         className="sticky top-0 z-50 flex items-center justify-between px-6 py-4 border-b backdrop-blur-md"
         style={{ background: 'rgba(10,10,10,0.85)', borderColor: 'var(--card-border)' }}
       >
-        <Image src="/evolve-logo.svg" alt="Evolve Studio" width={130} height={31} priority />
+        <Image src="/evolve-logo-claim.png" alt="Evolve Studio" width={150} height={36} priority />
         <div className="hidden md:flex items-center gap-8 text-sm font-medium" style={{ color: 'var(--muted-foreground)' }}>
           <a href="#metodologia" className="hover:text-white transition-colors">Metodologia</a>
           <a href="#modalidades" className="hover:text-white transition-colors">Modalidades</a>
@@ -141,14 +141,134 @@ export default function HomePage() {
       </nav>
 
       {/* ── HERO ── */}
-      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-28 pb-32 overflow-hidden">
-        {/* Glow background */}
+      <section className="relative flex flex-col items-center justify-center text-center px-6 pt-28 pb-32 overflow-hidden min-h-[90vh]">
+
+        {/* ── FUNDO ABSTRACTO ── */}
+        {/* Camada base escura */}
+        <div className="absolute inset-0 pointer-events-none" style={{ background: 'var(--background)' }} />
+
+        {/* Grid de linhas */}
+        <div
+          className="absolute inset-0 pointer-events-none opacity-[0.04]"
+          style={{
+            backgroundImage: `
+              linear-gradient(rgba(104,143,200,1) 1px, transparent 1px),
+              linear-gradient(90deg, rgba(104,143,200,1) 1px, transparent 1px)
+            `,
+            backgroundSize: '60px 60px',
+          }}
+        />
+
+        {/* Glow central superior */}
         <div
           className="absolute inset-0 pointer-events-none"
           style={{
-            background: 'radial-gradient(ellipse 80% 60% at 50% -10%, rgba(104,143,200,0.18) 0%, transparent 70%)',
+            background: 'radial-gradient(ellipse 70% 50% at 50% 0%, rgba(104,143,200,0.22) 0%, transparent 65%)',
           }}
         />
+
+        {/* Glow lateral esquerdo */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 40% 60% at -5% 60%, rgba(104,143,200,0.10) 0%, transparent 60%)',
+          }}
+        />
+
+        {/* Glow lateral direito */}
+        <div
+          className="absolute inset-0 pointer-events-none"
+          style={{
+            background: 'radial-gradient(ellipse 40% 60% at 105% 40%, rgba(104,143,200,0.08) 0%, transparent 60%)',
+          }}
+        />
+
+        {/* Linhas diagonais de velocidade */}
+        <div className="absolute inset-0 pointer-events-none overflow-hidden">
+          {[
+            { top: '15%', left: '-10%', width: '35%', rotate: '-8deg', opacity: 0.06 },
+            { top: '25%', left: '5%',   width: '20%', rotate: '-8deg', opacity: 0.04 },
+            { top: '60%', right: '-5%', width: '30%', rotate: '-8deg', opacity: 0.05 },
+            { top: '70%', right: '10%', width: '18%', rotate: '-8deg', opacity: 0.03 },
+          ].map((l, i) => (
+            <div
+              key={i}
+              className="absolute h-px"
+              style={{
+                top: l.top,
+                left: l.left,
+                right: l.right,
+                width: l.width,
+                transform: `rotate(${l.rotate})`,
+                background: `rgba(104,143,200,${l.opacity * 10})`,
+                opacity: l.opacity,
+              }}
+            />
+          ))}
+        </div>
+
+        {/* Círculo decorativo fundo direita */}
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            width: 600,
+            height: 600,
+            borderRadius: '50%',
+            border: '1px solid rgba(104,143,200,0.06)',
+            right: '-200px',
+            bottom: '-200px',
+          }}
+        />
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            width: 400,
+            height: 400,
+            borderRadius: '50%',
+            border: '1px solid rgba(104,143,200,0.05)',
+            right: '-100px',
+            bottom: '-100px',
+          }}
+        />
+
+        {/* Círculo decorativo fundo esquerda */}
+        <div
+          className="absolute pointer-events-none"
+          style={{
+            width: 500,
+            height: 500,
+            borderRadius: '50%',
+            border: '1px solid rgba(104,143,200,0.05)',
+            left: '-200px',
+            top: '-150px',
+          }}
+        />
+
+        {/* Tags flutuantes decorativas */}
+        <div
+          className="absolute top-24 left-8 md:left-16 hidden md:flex items-center gap-2 text-xs font-bold px-3 py-2 rounded-xl border"
+          style={{ background: 'rgba(10,10,10,0.8)', borderColor: 'rgba(104,143,200,0.2)', color: 'var(--accent)' }}
+        >
+          <span>🔥</span> HYROX Ready
+        </div>
+        <div
+          className="absolute top-36 right-8 md:right-16 hidden md:flex items-center gap-2 text-xs font-bold px-3 py-2 rounded-xl border"
+          style={{ background: 'rgba(10,10,10,0.8)', borderColor: 'rgba(104,143,200,0.2)', color: 'var(--accent)' }}
+        >
+          <span>⚡</span> Check-in semanal
+        </div>
+        <div
+          className="absolute bottom-28 left-8 md:left-24 hidden md:flex items-center gap-2 text-xs font-bold px-3 py-2 rounded-xl border"
+          style={{ background: 'rgba(10,10,10,0.8)', borderColor: 'rgba(104,143,200,0.2)', color: 'var(--accent)' }}
+        >
+          <span>🏃</span> Saturday Running Club
+        </div>
+        <div
+          className="absolute bottom-36 right-8 md:right-24 hidden md:flex items-center gap-2 text-xs font-bold px-3 py-2 rounded-xl border"
+          style={{ background: 'rgba(10,10,10,0.8)', borderColor: 'rgba(104,143,200,0.2)', color: 'var(--accent)' }}
+        >
+          <span>💪</span> 200+ atletas
+        </div>
 
         <div
           className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full border mb-8"
@@ -556,7 +676,7 @@ export default function HomePage() {
       {/* ── FOOTER ── */}
       <footer className="px-6 py-10 border-t" style={{ borderColor: 'var(--card-border)' }}>
         <div className="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-6">
-          <Image src="/evolve-logo.svg" alt="Evolve Studio" width={110} height={26} />
+          <Image src="/evolve-logo-claim.png" alt="Evolve Studio" width={120} height={29} />
           <div className="flex flex-wrap justify-center gap-6 text-xs font-medium" style={{ color: 'var(--muted-foreground)' }}>
             <a href="#metodologia" className="hover:text-white transition-colors">Metodologia</a>
             <a href="#modalidades" className="hover:text-white transition-colors">Modalidades</a>

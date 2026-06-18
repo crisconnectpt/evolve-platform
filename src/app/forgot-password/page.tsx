@@ -38,7 +38,7 @@ export default function ForgotPasswordPage() {
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
           <Link href="/" className="inline-block">
-            <Image src="/evolve-logo.svg" alt="Evolve Studio" width={160} height={38} priority />
+            <Image src="/evolve-logo-claim.png" alt="Evolve Studio" width={160} height={38} priority />
           </Link>
           <h1 className="text-2xl font-black mt-6">Recuperar password</h1>
           <p className="text-sm mt-2" style={{ color: 'var(--muted-foreground)' }}>
