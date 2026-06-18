@@ -4,29 +4,25 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { logout } from '@/app/auth/actions'
-import {
-  LayoutDashboard, Dumbbell, Target, CheckSquare, MessageCircle,
-  Users, Timer, Home, User, LogOut, X, LucideIcon,
-} from 'lucide-react'
 
-const coachLinks: { href: string; label: string; icon: LucideIcon }[] = [
-  { href: '/dashboard', label: 'Dashboard', icon: LayoutDashboard },
-  { href: '/dashboard/treinos', label: 'Treinos', icon: Dumbbell },
-  { href: '/dashboard/pt', label: 'PT Online', icon: Target },
-  { href: '/dashboard/check-ins', label: 'Check-ins', icon: CheckSquare },
-  { href: '/dashboard/mensagens', label: 'Mensagens', icon: MessageCircle },
-  { href: '/dashboard/clientes', label: 'Clientes', icon: Users },
-  { href: '/dashboard/comunidade', label: 'Comunidade SRC', icon: Timer },
+const coachLinks = [
+  { href: '/dashboard', label: 'Dashboard', icon: '⚡' },
+  { href: '/dashboard/treinos', label: 'Treinos', icon: '🏋️' },
+  { href: '/dashboard/pt', label: 'PT Online', icon: '🎯' },
+  { href: '/dashboard/check-ins', label: 'Check-ins', icon: '✅' },
+  { href: '/dashboard/mensagens', label: 'Mensagens', icon: '💬' },
+  { href: '/dashboard/clientes', label: 'Clientes', icon: '👥' },
+  { href: '/dashboard/comunidade', label: 'Comunidade SRC', icon: '🏃' },
 ]
 
-const clientLinks: { href: string; label: string; icon: LucideIcon }[] = [
-  { href: '/dashboard/cliente', label: 'Início', icon: Home },
-  { href: '/dashboard/cliente/treino', label: 'O meu treino', icon: Dumbbell },
-  { href: '/dashboard/cliente/pt', label: 'PT Online', icon: Target },
-  { href: '/dashboard/cliente/check-in', label: 'Check-in', icon: CheckSquare },
-  { href: '/dashboard/cliente/mensagens', label: 'Mensagens', icon: MessageCircle },
-  { href: '/dashboard/cliente/comunidade', label: 'Comunidade SRC', icon: Timer },
-  { href: '/dashboard/cliente/conta', label: 'A minha conta', icon: User },
+const clientLinks = [
+  { href: '/dashboard/cliente', label: 'Início', icon: '⚡' },
+  { href: '/dashboard/cliente/treino', label: 'O meu treino', icon: '🏋️' },
+  { href: '/dashboard/cliente/pt', label: 'PT Online', icon: '🎯' },
+  { href: '/dashboard/cliente/check-in', label: 'Check-in', icon: '✅' },
+  { href: '/dashboard/cliente/mensagens', label: 'Mensagens', icon: '💬' },
+  { href: '/dashboard/cliente/comunidade', label: 'Comunidade SRC', icon: '🏃' },
+  { href: '/dashboard/cliente/conta', label: 'A minha conta', icon: '👤' },
 ]
 
 export default function Sidebar({ role, name }: { role: string; name: string }) {
@@ -55,10 +51,10 @@ export default function Sidebar({ role, name }: { role: string; name: string }) 
         {/* Fechar no mobile */}
         <button
           onClick={() => setOpen(false)}
-          className="md:hidden"
+          className="md:hidden text-lg"
           style={{ color: 'var(--muted-foreground)' }}
         >
-          <X size={18} />
+          ✕
         </button>
       </div>
 
@@ -75,7 +71,7 @@ export default function Sidebar({ role, name }: { role: string; name: string }) 
                 color: active ? '#ffffff' : 'var(--muted-foreground)',
               }}
             >
-              <link.icon size={16} strokeWidth={2} />
+              <span>{link.icon}</span>
               {link.label}
             </Link>
           )
@@ -101,7 +97,7 @@ export default function Sidebar({ role, name }: { role: string; name: string }) 
             className="flex items-center gap-3 px-3 py-2 rounded-lg text-xs mt-1 transition-colors w-full text-left"
             style={{ color: 'var(--muted-foreground)' }}
           >
-            <LogOut size={14} /> Sair
+            <span>🚪</span> Sair
           </button>
         </form>
       </div>
