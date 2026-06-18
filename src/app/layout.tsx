@@ -5,8 +5,30 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Evolve Studio",
-  description: "Plataforma de acompanhamento personalizado — Evolve Studio Funchal",
+  title: {
+    default: "Evolve Studio — Treino Personalizado em Funchal",
+    template: "%s | Evolve Studio",
+  },
+  description: "Plataforma de acompanhamento personalizado. Treinos, check-ins, PT online e comunidade Saturday Running Club — Evolve Studio, Armazém do Mercado, Funchal.",
+  keywords: ["treino personalizado", "personal trainer", "Funchal", "Madeira", "HYROX", "corrida", "Saturday Running Club", "Evolve Studio"],
+  authors: [{ name: "Evolve Studio" }],
+  openGraph: {
+    title: "Evolve Studio — Treino Personalizado em Funchal",
+    description: "Acompanhamento personalizado online e presencial. HYROX, corrida, força e comunidade SRC.",
+    url: "https://evolve-platform.vercel.app",
+    siteName: "Evolve Studio",
+    locale: "pt_PT",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Evolve Studio — Treino Personalizado em Funchal",
+    description: "Acompanhamento personalizado online e presencial.",
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 };
 
 export default function RootLayout({

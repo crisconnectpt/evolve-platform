@@ -22,8 +22,8 @@ export async function POST(req: NextRequest) {
     mode: 'subscription',
     customer_email: user.email,
     line_items: [{ price: plan.priceId, quantity: 1 }],
-    success_url: `${process.env.NEXT_PUBLIC_APP_URL}/dashboard?subscribed=true`,
-    cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/precos`,
+    success_url: `${process.env.NEXT_PUBLIC_APP_URL}/checkout/sucesso`,
+    cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/checkout/cancelado`,
     metadata: { user_id: user.id, plano },
   })
 
