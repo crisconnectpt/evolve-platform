@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import Animate, { AnimateStagger, AnimateItem } from '@/components/Animate'
+import { Dumbbell, Timer, Zap, Heart, Target, Users, CheckCircle, MapPin, AtSign, Mail, type LucideIcon } from 'lucide-react'
 
 const planos = [
   {
@@ -81,13 +82,13 @@ const metodologia = [
   },
 ]
 
-const modalidades = [
-  { icon: '🏋️', nome: 'Força & Hipertrofia', desc: 'Musculação estruturada com periodização inteligente.' },
-  { icon: '🏃', nome: 'Corrida & Endurance', desc: 'Preparação para provas, melhoria de pace e resistência.' },
-  { icon: '⚡', nome: 'HYROX', desc: 'Treino funcional de alta intensidade para competição.' },
-  { icon: '🤸', nome: 'Mobilidade & Saúde', desc: 'Movimento sem dor, longevidade e qualidade de vida.' },
-  { icon: '🎯', nome: 'PT Online (sessões)', desc: 'Sessões individuais pontuais com o teu coach.' },
-  { icon: '🏃‍♂️', nome: 'Saturday Running Club', desc: 'Comunidade de corrida presencial em Funchal.' },
+const modalidades: { icon: LucideIcon; nome: string; desc: string }[] = [
+  { icon: Dumbbell, nome: 'Força & Hipertrofia', desc: 'Musculação estruturada com periodização inteligente.' },
+  { icon: Timer, nome: 'Corrida & Endurance', desc: 'Preparação para provas, melhoria de pace e resistência.' },
+  { icon: Zap, nome: 'HYROX', desc: 'Treino funcional de alta intensidade para competição.' },
+  { icon: Heart, nome: 'Mobilidade & Saúde', desc: 'Movimento sem dor, longevidade e qualidade de vida.' },
+  { icon: Target, nome: 'PT Online (sessões)', desc: 'Sessões individuais pontuais com o teu coach.' },
+  { icon: Users, nome: 'Saturday Running Club', desc: 'Comunidade de corrida presencial em Funchal.' },
 ]
 
 const depoimentos = [
@@ -260,7 +261,7 @@ export default function HomePage() {
                 className="rounded-2xl border p-6 flex flex-col gap-3 hover:border-blue-500/40 transition-colors cursor-default h-full"
                 style={{ background: 'var(--background)', borderColor: 'var(--card-border)' }}
               >
-                <span className="text-3xl">{m.icon}</span>
+                <m.icon size={28} style={{ color: 'var(--accent)' }} strokeWidth={1.75} />
                 <h3 className="font-black text-base">{m.nome}</h3>
                 <p className="text-sm" style={{ color: 'var(--muted-foreground)' }}>{m.desc}</p>
               </div>
@@ -340,15 +341,12 @@ export default function HomePage() {
                       className="flex items-start gap-2.5 text-sm"
                       style={{ color: plano.destaque ? 'rgba(255,255,255,0.9)' : 'var(--foreground)' }}
                     >
-                              <span
-                        className="mt-0.5 flex-shrink-0 w-4 h-4 rounded-full flex items-center justify-center text-xs font-bold"
-                        style={{
-                          background: plano.destaque ? 'rgba(255,255,255,0.25)' : 'rgba(104,143,200,0.15)',
-                          color: plano.destaque ? '#ffffff' : 'var(--accent)',
-                        }}
-                      >
-                        ✓
-                      </span>
+                              <CheckCircle
+                        size={15}
+                        strokeWidth={2.5}
+                        className="mt-0.5 flex-shrink-0"
+                        style={{ color: plano.destaque ? 'rgba(255,255,255,0.8)' : 'var(--accent)' }}
+                      />
                       {f}
                     </li>
                   ))}
@@ -378,10 +376,10 @@ export default function HomePage() {
         >
           <div className="flex items-center gap-5">
             <div
-              className="w-14 h-14 rounded-2xl flex items-center justify-center text-2xl flex-shrink-0"
-              style={{ background: 'rgba(104,143,200,0.12)' }}
+              className="w-14 h-14 rounded-2xl flex items-center justify-center flex-shrink-0"
+              style={{ background: 'rgba(45,113,224,0.12)' }}
             >
-              🎯
+              <Target size={28} style={{ color: 'var(--accent)' }} strokeWidth={1.75} />
             </div>
             <div>
               <h3 className="font-black text-lg">PT Online — Sessão Individual</h3>
@@ -483,10 +481,10 @@ export default function HomePage() {
           </div>
           <div className="flex-shrink-0 relative">
             <div
-              className="w-40 h-40 md:w-52 md:h-52 rounded-full flex items-center justify-center text-7xl md:text-8xl border-2"
-              style={{ borderColor: 'rgba(104,143,200,0.2)', background: 'rgba(104,143,200,0.06)' }}
+              className="w-40 h-40 md:w-52 md:h-52 rounded-full flex items-center justify-center border-2"
+              style={{ borderColor: 'rgba(45,113,224,0.2)', background: 'rgba(45,113,224,0.06)' }}
             >
-              🏃
+              <Timer size={80} strokeWidth={1} style={{ color: 'var(--accent)', opacity: 0.7 }} />
             </div>
           </div>
         </div>
@@ -542,28 +540,18 @@ export default function HomePage() {
 
           <AnimateStagger className="grid grid-cols-1 md:grid-cols-3 gap-5" stagger={0.12}>
             {[
-              {
-                icon: '📍',
-                titulo: 'Localização',
-                linhas: ['Armazém do Mercado', 'Funchal, Madeira'],
-              },
-              {
-                icon: '📱',
-                titulo: 'Instagram',
-                linhas: ['@evolvestudio.pt'],
-              },
-              {
-                icon: '✉️',
-                titulo: 'Email',
-                linhas: ['info@evolvestudio.pt'],
-              },
+              { icon: MapPin, titulo: 'Localização', linhas: ['Armazém do Mercado', 'Funchal, Madeira'] },
+              { icon: AtSign, titulo: 'Instagram', linhas: ['@evolvestudio.pt'] },
+              { icon: Mail, titulo: 'Email', linhas: ['info@evolvestudio.pt'] },
             ].map((c) => (
               <AnimateItem key={c.titulo}>
               <div
                 className="rounded-2xl border p-6 flex flex-col gap-3 text-center h-full"
                 style={{ background: 'var(--background)', borderColor: 'var(--card-border)' }}
               >
-                <div className="text-3xl">{c.icon}</div>
+                <div className="flex justify-center">
+                  <c.icon size={28} strokeWidth={1.75} style={{ color: 'var(--accent)' }} />
+                </div>
                 <div className="font-black text-sm">{c.titulo}</div>
                 {c.linhas.map((l) => (
                   <div key={l} className="text-sm" style={{ color: 'var(--muted-foreground)' }}>{l}</div>
