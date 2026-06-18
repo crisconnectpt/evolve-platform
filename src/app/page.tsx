@@ -353,7 +353,7 @@ export default function HomePage() {
                 </ul>
 
                 <Link
-                  href="/signup"
+                  href={`/signup?plano=${plano.id}`}
                   className="block text-center py-3.5 rounded-xl font-black text-sm transition-opacity hover:opacity-90"
                   style={{
                     background: plano.destaque ? '#ffffff' : 'var(--accent)',

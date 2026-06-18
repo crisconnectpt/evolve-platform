@@ -2,7 +2,7 @@ import { createClient } from '@/lib/supabase/server'
 import { redirect } from 'next/navigation'
 import OnboardingForm from './OnboardingForm'
 
-export default async function OnboardingPage() {
+export default async function OnboardingPage({ searchParams }: { searchParams: Promise<{ plano?: string }> }) {
   const supabase = await createClient()
   const { data: { user } } = await supabase.auth.getUser()
   if (!user) redirect('/login')
@@ -13,11 +13,10 @@ export default async function OnboardingPage() {
     .eq('id', user.id)
     .single()
 
-  // Coach não faz onboarding
   if (profile?.role === 'coach' || profile?.role === 'admin') redirect('/dashboard')
-
-  // Se já fez onboarding, vai direto
   if (profile?.onboarding_completo) redirect('/dashboard/cliente')
 
-  return <OnboardingForm nome={profile?.full_name ?? ''} />
+  const { plano } = await searchParams
+
+  return <OnboardingForm nome={profile?.full_name ?? ''} plano={plano ?? ''} />
 }

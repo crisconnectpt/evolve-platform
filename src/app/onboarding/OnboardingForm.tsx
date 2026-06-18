@@ -21,7 +21,13 @@ const niveis = [
 
 const diasOptions = [2, 3, 4, 5, 6]
 
-export default function OnboardingForm({ nome }: { nome: string }) {
+const planoInfo: Record<string, { nome: string; preco: string; cor: string }> = {
+  starter:  { nome: 'Starter',  preco: '29€/mês', cor: '#6b7280' },
+  standard: { nome: 'Standard', preco: '49€/mês', cor: '#2d71e0' },
+  premium:  { nome: 'Premium',  preco: '89€/mês', cor: '#7c3aed' },
+}
+
+export default function OnboardingForm({ nome, plano }: { nome: string; plano: string }) {
   const [step, setStep] = useState(1)
   const [fields, setFields] = useState({
     full_name: nome,
@@ -30,6 +36,7 @@ export default function OnboardingForm({ nome }: { nome: string }) {
     dias_semana: '3',
     telefone: '',
   })
+  const info = planoInfo[plano]
 
   const set = (k: keyof typeof fields, v: string) => setFields((f) => ({ ...f, [k]: v }))
 
@@ -63,6 +70,7 @@ export default function OnboardingForm({ nome }: { nome: string }) {
         <input type="hidden" name="nivel" value={fields.nivel} />
         <input type="hidden" name="dias_semana" value={fields.dias_semana} />
         <input type="hidden" name="telefone" value={fields.telefone} />
+        <input type="hidden" name="plano" value={plano} />
 
         {/* ── PASSO 1 — Nome e objetivo ── */}
         {step === 1 && (
@@ -214,6 +222,19 @@ export default function OnboardingForm({ nome }: { nome: string }) {
               </p>
             </div>
 
+            {info && (
+              <div
+                className="rounded-xl border p-4 flex items-center justify-between"
+                style={{ background: `${info.cor}12`, borderColor: `${info.cor}40` }}
+              >
+                <div>
+                  <div className="text-sm font-black" style={{ color: info.cor }}>Plano {info.nome}</div>
+                  <div className="text-xs" style={{ color: 'var(--muted-foreground)' }}>Serás redirecionado para pagamento</div>
+                </div>
+                <div className="text-sm font-black" style={{ color: info.cor }}>{info.preco}</div>
+              </div>
+            )}
+
             <div className="flex flex-col gap-1.5">
               <label className="text-xs font-semibold" style={{ color: 'var(--muted-foreground)' }}>
                 Telefone (opcional)
@@ -263,7 +284,7 @@ export default function OnboardingForm({ nome }: { nome: string }) {
                 className="flex-1 py-3.5 rounded-xl font-black text-sm transition-opacity hover:opacity-90"
                 style={{ background: 'var(--accent)', color: '#ffffff' }}
               >
-                Entrar no Evolve 🚀
+                {info ? `Continuar para pagamento →` : 'Entrar no Evolve 🚀'}
               </button>
             </div>
           </div>
