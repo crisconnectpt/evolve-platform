@@ -44,7 +44,7 @@ export default async function CheckinPage() {
                 <span>Treinos: {c.treinos_feitos}</span>
               </div>
               {c.resposta_coach && (
-                <div className="mt-3 rounded-lg p-3 text-sm" style={{ background: '#688fc822', color: 'var(--accent)' }}>
+                <div className="mt-3 rounded-lg p-3 text-sm" style={{ background: '#2d71e022', color: 'var(--accent)' }}>
                   💬 {c.resposta_coach}
                 </div>
               )}

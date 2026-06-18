@@ -85,7 +85,7 @@ export default async function ClientesPage() {
                     <span
                       className="px-2 py-0.5 rounded text-xs font-medium"
                       style={{
-                        background: c.plano === 'Premium' ? '#688fc822' : 'var(--muted)',
+                        background: c.plano === 'Premium' ? '#2d71e022' : 'var(--muted)',
                         color: c.plano === 'Premium' ? 'var(--accent)' : 'var(--muted-foreground)',
                       }}
                     >
@@ -99,7 +99,7 @@ export default async function ClientesPage() {
                     <span
                       className="px-2 py-0.5 rounded-full text-xs font-medium"
                       style={{
-                        background: c.status === 'activo' ? '#688fc822' : '#ff4d4d22',
+                        background: c.status === 'activo' ? '#2d71e022' : '#ff4d4d22',
                         color: c.status === 'activo' ? 'var(--accent)' : '#ff6b6b',
                       }}
                     >

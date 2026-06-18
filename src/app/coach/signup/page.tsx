@@ -32,7 +32,7 @@ export default function CoachSignupPage() {
           <div className="mt-4">
             <span
               className="text-xs font-bold px-3 py-1 rounded-full"
-              style={{ background: '#688fc822', color: 'var(--accent)' }}
+              style={{ background: '#2d71e022', color: 'var(--accent)' }}
             >
               Área reservada — Coaches
             </span>

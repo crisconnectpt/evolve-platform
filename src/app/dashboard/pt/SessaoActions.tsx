@@ -15,7 +15,7 @@ export default function SessaoActions({ id, estado }: { id: string; estado: stri
           onClick={() => startTransition(async () => { await concluirSessaoPT(id) })}
           disabled={pending}
           className="px-3 py-1.5 rounded-lg text-xs font-bold disabled:opacity-60"
-          style={{ background: '#688fc822', color: 'var(--accent)' }}
+          style={{ background: '#2d71e022', color: 'var(--accent)' }}
         >
           ✓ Concluída
         </button>

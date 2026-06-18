@@ -82,7 +82,7 @@ export default async function MensagensCoachPage({
                   key={c.id}
                   href={`/dashboard/mensagens?cliente=${c.id}`}
                   className="flex items-center gap-3 px-4 py-3 transition-colors"
-                  style={{ background: active ? '#688fc822' : 'transparent', borderLeft: active ? '3px solid var(--accent)' : '3px solid transparent' }}
+                  style={{ background: active ? '#2d71e022' : 'transparent', borderLeft: active ? '3px solid var(--accent)' : '3px solid transparent' }}
                 >
                   <div className="w-9 h-9 rounded-full flex items-center justify-center text-xs font-bold flex-shrink-0" style={{ background: 'var(--accent)', color: '#ffffff' }}>
                     {initials}

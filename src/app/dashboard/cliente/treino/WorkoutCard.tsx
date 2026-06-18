@@ -30,7 +30,7 @@ export default function WorkoutCard({ workout }: { workout: Workout }) {
     <div
       className="rounded-2xl border p-5 flex items-center gap-4 transition-all"
       style={{
-        background: concluido ? '#688fc811' : 'var(--card)',
+        background: concluido ? '#2d71e011' : 'var(--card)',
         borderColor: concluido ? 'var(--accent)' : 'var(--card-border)',
       }}
     >
@@ -52,7 +52,7 @@ export default function WorkoutCard({ workout }: { workout: Workout }) {
         <div className="flex items-center gap-2 mb-1">
           <span
             className="text-xs font-bold px-2 py-0.5 rounded"
-            style={{ background: '#688fc822', color: 'var(--accent)' }}
+            style={{ background: '#2d71e022', color: 'var(--accent)' }}
           >
             {workout.tipo || 'Treino'}
           </span>
@@ -75,7 +75,7 @@ export default function WorkoutCard({ workout }: { workout: Workout }) {
       <span
         className="text-xs font-medium px-3 py-1 rounded-full flex-shrink-0"
         style={{
-          background: concluido ? '#688fc822' : 'var(--muted)',
+          background: concluido ? '#2d71e022' : 'var(--muted)',
           color: concluido ? 'var(--accent)' : 'var(--muted-foreground)',
         }}
       >

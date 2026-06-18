@@ -53,7 +53,7 @@ export default async function ProgramaPage({ params }: { params: Promise<{ id: s
         {atribuidos && atribuidos.length > 0 && (
           <div className="flex flex-wrap gap-2 mt-2">
             {atribuidos.map((a) => (
-              <span key={a.client_id} className="text-xs px-3 py-1 rounded-full" style={{ background: '#688fc822', color: 'var(--accent)' }}>
+              <span key={a.client_id} className="text-xs px-3 py-1 rounded-full" style={{ background: '#2d71e022', color: 'var(--accent)' }}>
                 {(a.profiles as any)?.full_name ?? a.client_id}
               </span>
             ))}
@@ -79,7 +79,7 @@ export default async function ProgramaPage({ params }: { params: Promise<{ id: s
               {ws!.map((w) => (
                 <div key={w.id} className="rounded-2xl border p-4 flex flex-col gap-1" style={{ background: 'var(--card)', borderColor: 'var(--card-border)' }}>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs font-bold px-2 py-0.5 rounded" style={{ background: '#688fc822', color: 'var(--accent)' }}>{w.tipo}</span>
+                    <span className="text-xs font-bold px-2 py-0.5 rounded" style={{ background: '#2d71e022', color: 'var(--accent)' }}>{w.tipo}</span>
                     <span className="text-xs" style={{ color: 'var(--muted-foreground)' }}>{w.dia}</span>
                   </div>
                   <div className="font-bold text-sm">{w.titulo}</div>

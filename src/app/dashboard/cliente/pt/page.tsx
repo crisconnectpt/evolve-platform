@@ -33,7 +33,7 @@ export default async function ClientePTPage({ searchParams }: { searchParams: Pr
       </div>
 
       {sucesso && (
-        <div className="rounded-2xl border p-4 font-medium text-sm" style={{ background: '#688fc822', borderColor: 'var(--accent)', color: 'var(--accent)' }}>
+        <div className="rounded-2xl border p-4 font-medium text-sm" style={{ background: '#2d71e022', borderColor: 'var(--accent)', color: 'var(--accent)' }}>
           ✅ Pagamento confirmado! A tua sessão está reservada. O coach vai enviar-te o link da videochamada.
         </div>
       )}

@@ -49,7 +49,7 @@ export default function CheckinCard({ checkin }: { checkin: any }) {
       )}
 
       {respondido ? (
-        <div className="rounded-lg p-3 text-sm" style={{ background: '#688fc822', color: 'var(--accent)' }}>
+        <div className="rounded-lg p-3 text-sm" style={{ background: '#2d71e022', color: 'var(--accent)' }}>
           💬 {resposta}
         </div>
       ) : (

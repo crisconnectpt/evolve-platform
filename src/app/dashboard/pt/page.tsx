@@ -4,7 +4,7 @@ import NovaSessao from './NovaSessao'
 import SessaoActions from './SessaoActions'
 
 const estadoLabel: Record<string, { label: string; bg: string; color: string }> = {
-  disponivel: { label: 'Disponível', bg: '#688fc822', color: 'var(--accent)' },
+  disponivel: { label: 'Disponível', bg: '#2d71e022', color: 'var(--accent)' },
   reservado:  { label: 'Reservado',  bg: '#ffd70022', color: '#ffd700' },
   concluido:  { label: 'Concluído',  bg: '#4ecdc422', color: '#4ecdc4' },
   cancelado:  { label: 'Cancelado',  bg: '#ff4d4d22', color: '#ff6b6b' },
