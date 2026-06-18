@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { useState, useEffect } from 'react'
 import { logout } from '@/app/auth/actions'
@@ -46,9 +47,7 @@ export default function Sidebar({ role, name }: { role: string; name: string }) 
       style={{ background: 'var(--card)', borderColor: 'var(--card-border)' }}
     >
       <div className="px-2 mb-8 flex items-center justify-between">
-        <span className="text-lg font-black tracking-tight">
-          EVOLVE<span style={{ color: 'var(--accent)' }}>.</span>
-        </span>
+        <Image src="/evolve-logo.svg" alt="Evolve Studio" width={110} height={26} priority />
         {/* Fechar no mobile */}
         <button
           onClick={() => setOpen(false)}
@@ -119,9 +118,7 @@ export default function Sidebar({ role, name }: { role: string; name: string }) 
           className="fixed top-0 left-0 right-0 z-40 flex items-center justify-between px-4 py-3 border-b"
           style={{ background: 'var(--card)', borderColor: 'var(--card-border)' }}
         >
-          <span className="text-base font-black tracking-tight">
-            EVOLVE<span style={{ color: 'var(--accent)' }}>.</span>
-          </span>
+          <Image src="/evolve-logo.svg" alt="Evolve Studio" width={100} height={24} priority />
           <button
             onClick={() => setOpen(true)}
             className="flex flex-col gap-1.5 p-1"

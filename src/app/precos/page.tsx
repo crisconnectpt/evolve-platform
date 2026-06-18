@@ -1,6 +1,7 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { useRouter } from 'next/navigation'
 
@@ -66,8 +67,8 @@ export default function PrecosPage() {
   return (
     <main className="min-h-screen" style={{ background: 'var(--background)' }}>
       <nav className="flex items-center justify-between px-6 py-5 border-b" style={{ borderColor: 'var(--card-border)' }}>
-        <Link href="/" className="text-xl font-bold tracking-tight">
-          EVOLVE<span style={{ color: 'var(--accent)' }}>.</span>
+        <Link href="/" className="inline-block">
+          <Image src="/evolve-logo.svg" alt="Evolve Studio" width={130} height={31} priority />
         </Link>
         <div className="flex items-center gap-4">
           <Link href="/login" className="text-sm" style={{ color: 'var(--muted-foreground)' }}>Entrar</Link>

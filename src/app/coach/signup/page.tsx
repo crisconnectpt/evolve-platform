@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { coachSignup } from './actions'
 
 export default function CoachSignupPage() {
@@ -25,8 +26,8 @@ export default function CoachSignupPage() {
       <div className="w-full max-w-md">
         {/* Header */}
         <div className="text-center mb-8">
-          <Link href="/" className="text-2xl font-black tracking-tight">
-            EVOLVE<span style={{ color: 'var(--accent)' }}>.</span>
+          <Link href="/" className="inline-block">
+            <Image src="/evolve-logo.svg" alt="Evolve Studio" width={160} height={38} priority />
           </Link>
           <div className="mt-4">
             <span

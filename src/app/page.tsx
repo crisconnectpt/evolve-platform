@@ -1,13 +1,12 @@
 import Link from 'next/link'
+import Image from 'next/image'
 
 export default function HomePage() {
   return (
     <main className="min-h-screen flex flex-col" style={{ background: 'var(--background)' }}>
       {/* Nav */}
       <nav className="flex items-center justify-between px-6 py-5 border-b" style={{ borderColor: 'var(--card-border)' }}>
-        <span className="text-xl font-bold tracking-tight" style={{ color: 'var(--foreground)' }}>
-          EVOLVE<span style={{ color: 'var(--accent)' }}>.</span>
-        </span>
+        <Image src="/evolve-logo.svg" alt="Evolve Studio" width={140} height={33} priority />
         <div className="flex items-center gap-4">
           <Link href="/login" className="text-sm" style={{ color: 'var(--muted-foreground)' }}>
             Entrar

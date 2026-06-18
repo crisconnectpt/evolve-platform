@@ -12,6 +12,10 @@ export const metadata: Metadata = {
   description: "Plataforma de acompanhamento personalizado. Treinos, check-ins, PT online e comunidade Saturday Running Club — Evolve Studio, Armazém do Mercado, Funchal.",
   keywords: ["treino personalizado", "personal trainer", "Funchal", "Madeira", "HYROX", "corrida", "Saturday Running Club", "Evolve Studio"],
   authors: [{ name: "Evolve Studio" }],
+  icons: {
+    icon: "/favicon.png",
+    apple: "/favicon.png",
+  },
   openGraph: {
     title: "Evolve Studio — Treino Personalizado em Funchal",
     description: "Acompanhamento personalizado online e presencial. HYROX, corrida, força e comunidade SRC.",
@@ -19,11 +23,13 @@ export const metadata: Metadata = {
     siteName: "Evolve Studio",
     locale: "pt_PT",
     type: "website",
+    images: [{ url: "/og-image.png", width: 1200, height: 400, alt: "Evolve Studio" }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Evolve Studio — Treino Personalizado em Funchal",
     description: "Acompanhamento personalizado online e presencial.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,

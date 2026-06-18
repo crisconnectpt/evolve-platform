@@ -1,5 +1,6 @@
 'use client'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import { signup } from '@/app/auth/actions'
 
@@ -23,8 +24,8 @@ export default function SignupPage() {
     <main className="min-h-screen flex items-center justify-center px-4 py-12" style={{ background: 'var(--background)' }}>
       <div className="w-full max-w-sm">
         <div className="text-center mb-10">
-          <Link href="/" className="text-2xl font-black tracking-tight">
-            EVOLVE<span style={{ color: 'var(--accent)' }}>.</span>
+          <Link href="/" className="inline-block">
+            <Image src="/evolve-logo.svg" alt="Evolve Studio" width={160} height={38} priority />
           </Link>
           <p className="mt-2 text-sm" style={{ color: 'var(--muted-foreground)' }}>
             Cria a tua conta

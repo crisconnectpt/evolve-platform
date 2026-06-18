@@ -2,6 +2,7 @@
 
 import { useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { createBrowserClient } from '@supabase/ssr'
 
 export default function ForgotPasswordPage() {
@@ -36,8 +37,8 @@ export default function ForgotPasswordPage() {
     <main className="min-h-screen flex items-center justify-center px-4" style={{ background: 'var(--background)' }}>
       <div className="w-full max-w-sm">
         <div className="text-center mb-8">
-          <Link href="/" className="text-2xl font-black tracking-tight">
-            EVOLVE<span style={{ color: 'var(--accent)' }}>.</span>
+          <Link href="/" className="inline-block">
+            <Image src="/evolve-logo.svg" alt="Evolve Studio" width={160} height={38} priority />
           </Link>
           <h1 className="text-2xl font-black mt-6">Recuperar password</h1>
           <p className="text-sm mt-2" style={{ color: 'var(--muted-foreground)' }}>
