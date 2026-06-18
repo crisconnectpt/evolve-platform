@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
+import Animate, { AnimateStagger, AnimateItem } from '@/components/Animate'
 
 const planos = [
   {
@@ -150,128 +151,140 @@ export default function HomePage() {
           }}
         />
 
-        <div
-          className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full border mb-8"
-          style={{ borderColor: 'rgba(104,143,200,0.35)', color: 'var(--accent)', background: 'rgba(104,143,200,0.08)' }}
-        >
-          <span className="w-1.5 h-1.5 rounded-full animate-pulse inline-block" style={{ background: 'var(--accent)' }} />
-          Funchal, Madeira · Armazém do Mercado
-        </div>
-
-        <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-none max-w-5xl mb-6">
-          Treina com<br />
-          <span style={{ color: 'var(--accent)' }}>propósito.</span><br />
-          Evolui de verdade.
-        </h1>
-
-        <p className="text-lg md:text-xl max-w-2xl mb-10 leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
-          Acompanhamento personalizado online com a metodologia do Evolve Studio.
-          Força, corrida, HYROX e comunidade — tudo numa só plataforma.
-        </p>
-
-        <div className="flex flex-col sm:flex-row gap-4 mb-16">
-          <Link
-            href="/signup"
-            className="px-10 py-4 rounded-xl font-black text-base tracking-tight transition-transform hover:scale-105"
-            style={{ background: 'var(--accent)', color: '#ffffff' }}
+        <Animate delay={0.1}>
+          <div
+            className="inline-flex items-center gap-2 text-xs font-semibold px-4 py-1.5 rounded-full border mb-8"
+            style={{ borderColor: 'rgba(45,113,224,0.35)', color: 'var(--accent)', background: 'rgba(45,113,224,0.08)' }}
           >
-            Começar agora — é grátis
-          </Link>
-          <a
-            href="#planos"
-            className="px-10 py-4 rounded-xl font-semibold text-base border transition-colors hover:border-white/30"
-            style={{ borderColor: 'var(--card-border)', color: 'var(--foreground)' }}
-          >
-            Ver planos
-          </a>
-        </div>
+            <span className="w-1.5 h-1.5 rounded-full animate-pulse inline-block" style={{ background: 'var(--accent)' }} />
+            Funchal, Madeira · Armazém do Mercado
+          </div>
+        </Animate>
+
+        <Animate delay={0.2}>
+          <h1 className="text-5xl sm:text-6xl md:text-8xl font-black tracking-tighter leading-none max-w-5xl mb-6">
+            Treina com<br />
+            <span style={{ color: 'var(--accent)' }}>propósito.</span><br />
+            Evolui de verdade.
+          </h1>
+        </Animate>
+
+        <Animate delay={0.35}>
+          <p className="text-lg md:text-xl max-w-2xl mb-10 leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>
+            Acompanhamento personalizado online com a metodologia do Evolve Studio.
+            Força, corrida, HYROX e comunidade — tudo numa só plataforma.
+          </p>
+        </Animate>
+
+        <Animate delay={0.5}>
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+            <Link
+              href="/signup"
+              className="px-10 py-4 rounded-xl font-black text-base tracking-tight transition-transform hover:scale-105"
+              style={{ background: 'var(--accent)', color: '#ffffff' }}
+            >
+              Começar agora — é grátis
+            </Link>
+            <a
+              href="#planos"
+              className="px-10 py-4 rounded-xl font-semibold text-base border transition-colors hover:border-white/30"
+              style={{ borderColor: 'var(--card-border)', color: 'var(--foreground)' }}
+            >
+              Ver planos
+            </a>
+          </div>
+        </Animate>
 
         {/* Stats */}
-        <div className="flex flex-wrap justify-center gap-10 md:gap-16">
+        <AnimateStagger className="flex flex-wrap justify-center gap-10 md:gap-16" delay={0.6} stagger={0.15}>
           {[
             { val: '200+', label: 'Atletas acompanhados' },
             { val: '4.9★', label: 'Avaliação média' },
             { val: '3×', label: 'Mais resultados vs. ginásio' },
           ].map((s) => (
-            <div key={s.label} className="flex flex-col items-center gap-1">
-              <span className="text-3xl md:text-4xl font-black" style={{ color: 'var(--accent)' }}>{s.val}</span>
-              <span className="text-xs font-medium" style={{ color: 'var(--muted-foreground)' }}>{s.label}</span>
-            </div>
+            <AnimateItem key={s.label}>
+              <div className="flex flex-col items-center gap-1">
+                <span className="text-3xl md:text-4xl font-black" style={{ color: 'var(--accent)' }}>{s.val}</span>
+                <span className="text-xs font-medium" style={{ color: 'var(--muted-foreground)' }}>{s.label}</span>
+              </div>
+            </AnimateItem>
           ))}
-        </div>
+        </AnimateStagger>
       </section>
 
       {/* ── METODOLOGIA ── */}
       <section id="metodologia" className="px-6 py-24 max-w-6xl mx-auto w-full">
-        <div className="text-center mb-16">
+        <Animate className="text-center mb-16">
           <span className="text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--accent)' }}>Como funciona</span>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mt-3">O método Evolve</h2>
           <p className="mt-4 max-w-xl mx-auto" style={{ color: 'var(--muted-foreground)' }}>
             Uma abordagem estruturada, científica e humana. Não existem atalhos — existem sistemas que funcionam.
           </p>
-        </div>
+        </Animate>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+        <AnimateStagger className="grid grid-cols-1 md:grid-cols-2 gap-6" stagger={0.12}>
           {metodologia.map((item) => (
-            <div
-              key={item.num}
-              className="rounded-2xl border p-8 flex gap-6 group hover:border-blue-500/40 transition-colors"
-              style={{ background: 'var(--card)', borderColor: 'var(--card-border)' }}
-            >
-              <span
-                className="text-5xl font-black leading-none flex-shrink-0 tabular-nums"
-                style={{ color: 'rgba(104,143,200,0.25)' }}
+            <AnimateItem key={item.num}>
+              <div
+                className="rounded-2xl border p-8 flex gap-6 group hover:border-blue-500/40 transition-colors h-full"
+                style={{ background: 'var(--card)', borderColor: 'var(--card-border)' }}
               >
-                {item.num}
-              </span>
-              <div>
-                <h3 className="text-lg font-black mb-2">{item.titulo}</h3>
-                <p className="text-sm leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>{item.desc}</p>
+                <span
+                  className="text-5xl font-black leading-none flex-shrink-0 tabular-nums"
+                  style={{ color: 'rgba(45,113,224,0.25)' }}
+                >
+                  {item.num}
+                </span>
+                <div>
+                  <h3 className="text-lg font-black mb-2">{item.titulo}</h3>
+                  <p className="text-sm leading-relaxed" style={{ color: 'var(--muted-foreground)' }}>{item.desc}</p>
+                </div>
               </div>
-            </div>
+            </AnimateItem>
           ))}
-        </div>
+        </AnimateStagger>
       </section>
 
       {/* ── MODALIDADES ── */}
       <section id="modalidades" className="px-6 py-24 w-full" style={{ background: 'var(--card)' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Animate className="text-center mb-16">
             <span className="text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--accent)' }}>Especialidades</span>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mt-3">O que treinamos</h2>
-          </div>
+          </Animate>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <AnimateStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4" stagger={0.08}>
             {modalidades.map((m) => (
+              <AnimateItem key={m.nome}>
               <div
-                key={m.nome}
-                className="rounded-2xl border p-6 flex flex-col gap-3 hover:border-blue-500/40 transition-colors cursor-default"
+                className="rounded-2xl border p-6 flex flex-col gap-3 hover:border-blue-500/40 transition-colors cursor-default h-full"
                 style={{ background: 'var(--background)', borderColor: 'var(--card-border)' }}
               >
                 <span className="text-3xl">{m.icon}</span>
                 <h3 className="font-black text-base">{m.nome}</h3>
                 <p className="text-sm" style={{ color: 'var(--muted-foreground)' }}>{m.desc}</p>
               </div>
+              </AnimateItem>
             ))}
-          </div>
+          </AnimateStagger>
         </div>
       </section>
 
       {/* ── PLANOS ── */}
       <section id="planos" className="px-6 py-24 max-w-6xl mx-auto w-full">
-        <div className="text-center mb-16">
+        <Animate className="text-center mb-16">
           <span className="text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--accent)' }}>Preços</span>
           <h2 className="text-4xl md:text-5xl font-black tracking-tight mt-3">Escolhe o teu plano</h2>
           <p className="mt-4 max-w-lg mx-auto" style={{ color: 'var(--muted-foreground)' }}>
             Sem contratos longos. Cancela quando quiseres. Começa hoje.
           </p>
-        </div>
+        </Animate>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
+        <AnimateStagger className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch" stagger={0.12}>
           {planos.map((plano) => (
+            <AnimateItem key={plano.id}>
             <div
-              key={plano.id}
-              className="rounded-2xl border flex flex-col relative overflow-hidden transition-transform hover:-translate-y-1"
+              className="rounded-2xl border flex flex-col relative overflow-hidden transition-transform hover:-translate-y-1 h-full"
               style={{
                 background: plano.destaque ? 'var(--accent)' : 'var(--card)',
                 borderColor: plano.destaque ? 'transparent' : 'var(--card-border)',
@@ -353,10 +366,12 @@ export default function HomePage() {
                 </Link>
               </div>
             </div>
+            </AnimateItem>
           ))}
-        </div>
+        </AnimateStagger>
 
         {/* PT Online destaque */}
+        <Animate delay={0.2}>
         <div
           className="mt-6 rounded-2xl border p-8 flex flex-col md:flex-row items-center justify-between gap-6"
           style={{ background: 'var(--card)', borderColor: 'var(--card-border)' }}
@@ -389,21 +404,22 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
+        </Animate>
       </section>
 
       {/* ── DEPOIMENTOS ── */}
       <section className="px-6 py-24 w-full" style={{ background: 'var(--card)' }}>
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
+          <Animate className="text-center mb-16">
             <span className="text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--accent)' }}>Resultados reais</span>
             <h2 className="text-4xl md:text-5xl font-black tracking-tight mt-3">O que dizem os atletas</h2>
-          </div>
+          </Animate>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <AnimateStagger className="grid grid-cols-1 md:grid-cols-3 gap-6" stagger={0.15}>
             {depoimentos.map((d) => (
+              <AnimateItem key={d.nome}>
               <div
-                key={d.nome}
-                className="rounded-2xl border p-7 flex flex-col gap-5"
+                className="rounded-2xl border p-7 flex flex-col gap-5 h-full"
                 style={{ background: 'var(--background)', borderColor: 'var(--card-border)' }}
               >
                 <div className="flex">
@@ -427,13 +443,15 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
+              </AnimateItem>
             ))}
-          </div>
+          </AnimateStagger>
         </div>
       </section>
 
       {/* ── SRC BANNER ── */}
       <section className="px-6 py-20 max-w-6xl mx-auto w-full">
+        <Animate>
         <div
           className="rounded-3xl border p-10 md:p-14 flex flex-col md:flex-row items-center gap-10 relative overflow-hidden"
           style={{ background: 'var(--card)', borderColor: 'var(--card-border)' }}
@@ -472,10 +490,12 @@ export default function HomePage() {
             </div>
           </div>
         </div>
+        </Animate>
       </section>
 
       {/* ── CTA FINAL ── */}
       <section className="px-6 py-20 text-center">
+        <Animate>
         <div
           className="max-w-3xl mx-auto rounded-3xl p-14 border relative overflow-hidden"
           style={{ background: 'var(--accent)' }}
@@ -506,20 +526,21 @@ export default function HomePage() {
             </a>
           </div>
         </div>
+        </Animate>
       </section>
 
       {/* ── CONTACTO ── */}
       <section id="contacto" className="px-6 py-20 w-full" style={{ background: 'var(--card)' }}>
         <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-14">
+          <Animate className="text-center mb-14">
             <span className="text-xs font-bold tracking-widest uppercase" style={{ color: 'var(--accent)' }}>Contacto</span>
             <h2 className="text-4xl font-black tracking-tight mt-3">Fala connosco</h2>
             <p className="mt-4" style={{ color: 'var(--muted-foreground)' }}>
               Tens dúvidas? Estamos aqui para ajudar.
             </p>
-          </div>
+          </Animate>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          <AnimateStagger className="grid grid-cols-1 md:grid-cols-3 gap-5" stagger={0.12}>
             {[
               {
                 icon: '📍',
@@ -537,9 +558,9 @@ export default function HomePage() {
                 linhas: ['info@evolvestudio.pt'],
               },
             ].map((c) => (
+              <AnimateItem key={c.titulo}>
               <div
-                key={c.titulo}
-                className="rounded-2xl border p-6 flex flex-col gap-3 text-center"
+                className="rounded-2xl border p-6 flex flex-col gap-3 text-center h-full"
                 style={{ background: 'var(--background)', borderColor: 'var(--card-border)' }}
               >
                 <div className="text-3xl">{c.icon}</div>
@@ -548,8 +569,9 @@ export default function HomePage() {
                   <div key={l} className="text-sm" style={{ color: 'var(--muted-foreground)' }}>{l}</div>
                 ))}
               </div>
+              </AnimateItem>
             ))}
-          </div>
+          </AnimateStagger>
         </div>
       </section>
 
