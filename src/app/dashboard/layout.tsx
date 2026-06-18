@@ -18,11 +18,6 @@ export default async function DashboardLayout({ children }: { children: React.Re
   const role = profile?.role ?? 'client'
   const name = profile?.full_name ?? user.email ?? 'Utilizador'
 
-  // Redirecionar clientes novos para onboarding
-  if (role === 'client' && !profile?.onboarding_completo) {
-    redirect('/onboarding')
-  }
-
   return (
     <div className="flex min-h-screen" style={{ background: 'var(--background)' }}>
       <Sidebar role={role} name={name} />
