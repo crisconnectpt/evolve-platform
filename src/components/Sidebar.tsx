@@ -6,7 +6,7 @@ import { useState, useEffect } from 'react'
 import { logout } from '@/app/auth/actions'
 import {
   LayoutDashboard, Dumbbell, Target, CheckSquare, MessageCircle,
-  Users, Timer, Home, User, LogOut, X, type LucideIcon,
+  Users, Timer, Home, User, LogOut, X, TrendingUp, type LucideIcon,
 } from 'lucide-react'
 
 const coachLinks: { href: string; label: string; icon: LucideIcon }[] = [
@@ -25,6 +25,7 @@ const clientLinks: { href: string; label: string; icon: LucideIcon }[] = [
   { href: '/dashboard/cliente/pt', label: 'PT Online', icon: Target },
   { href: '/dashboard/cliente/check-in', label: 'Check-in', icon: CheckSquare },
   { href: '/dashboard/cliente/mensagens', label: 'Mensagens', icon: MessageCircle },
+  { href: '/dashboard/cliente/progresso', label: 'O meu progresso', icon: TrendingUp },
   { href: '/dashboard/cliente/comunidade', label: 'Comunidade SRC', icon: Timer },
   { href: '/dashboard/cliente/conta', label: 'A minha conta', icon: User },
 ]
