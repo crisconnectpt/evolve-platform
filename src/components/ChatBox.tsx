@@ -7,6 +7,7 @@ import { enviarMensagem } from '@/lib/mensagens'
 interface Mensagem {
   id: string
   sender_id: string
+  receiver_id: string
   conteudo: string
   created_at: string
   lida: boolean

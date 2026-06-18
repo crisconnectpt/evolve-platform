@@ -12,7 +12,7 @@ export default function SessaoActions({ id, estado }: { id: string; estado: stri
     <div className="flex gap-2 mt-2">
       {estado === 'reservado' && (
         <button
-          onClick={() => startTransition(() => concluirSessaoPT(id))}
+          onClick={() => startTransition(async () => { await concluirSessaoPT(id) })}
           disabled={pending}
           className="px-3 py-1.5 rounded-lg text-xs font-bold disabled:opacity-60"
           style={{ background: '#688fc822', color: 'var(--accent)' }}
@@ -21,7 +21,7 @@ export default function SessaoActions({ id, estado }: { id: string; estado: stri
         </button>
       )}
       <button
-        onClick={() => startTransition(() => cancelarSessaoPT(id))}
+        onClick={() => startTransition(async () => { await cancelarSessaoPT(id) })}
         disabled={pending}
         className="px-3 py-1.5 rounded-lg text-xs font-bold disabled:opacity-60"
         style={{ background: '#ff4d4d22', color: '#ff6b6b' }}

@@ -17,7 +17,7 @@ export async function POST(req: NextRequest) {
   const supabase = await createClient()
 
   if (event.type === 'checkout.session.completed') {
-    const session = event.data.object as Stripe.CheckoutSession
+    const session = event.data.object as Stripe.Checkout.Session
     const metadata = session.metadata ?? {}
 
     // PT Session one-time payment
@@ -50,8 +50,8 @@ export async function POST(req: NextRequest) {
     await supabase.from('subscriptions')
       .update({
         status: sub.status,
-        periodo_inicio: new Date((sub.current_period_start) * 1000).toISOString(),
-        periodo_fim: new Date((sub.current_period_end) * 1000).toISOString(),
+        periodo_inicio: new Date(((sub as unknown as { current_period_start: number }).current_period_start) * 1000).toISOString(),
+        periodo_fim: new Date(((sub as unknown as { current_period_end: number }).current_period_end) * 1000).toISOString(),
         updated_at: new Date().toISOString(),
       })
       .eq('stripe_subscription_id', sub.id)
