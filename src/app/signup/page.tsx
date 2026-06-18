@@ -18,6 +18,12 @@ function SignupForm() {
   const plano = params.get('plano') ?? ''
   const info = planoInfo[plano]
 
+  // Sem plano → redirecionar para os planos na landing
+  if (!info) {
+    if (typeof window !== 'undefined') window.location.replace('/#planos')
+    return null
+  }
+
   const [error, setError] = useState<string | null>(null)
   const [loading, setLoading] = useState(false)
 
@@ -56,7 +62,7 @@ function SignupForm() {
               <div className="w-2 h-2 rounded-full" style={{ background: info.cor }} />
               <div>
                 <div className="text-sm font-black" style={{ color: info.cor }}>Plano {info.nome}</div>
-                <div className="text-xs" style={{ color: 'var(--muted-foreground)' }}>Pagamento após confirmação</div>
+                <div className="text-xs" style={{ color: 'var(--muted-foreground)' }}>7 dias grátis · cancela quando quiseres</div>
               </div>
             </div>
             <div className="text-sm font-black" style={{ color: info.cor }}>{info.preco}</div>

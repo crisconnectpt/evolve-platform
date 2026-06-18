@@ -132,13 +132,13 @@ export default function HomePage() {
           <Link href="/login" className="text-sm font-medium hidden sm:block" style={{ color: 'var(--muted-foreground)' }}>
             Entrar
           </Link>
-          <Link
-            href="/signup"
+          <a
+            href="#planos"
             className="text-sm font-bold px-5 py-2.5 rounded-xl transition-opacity hover:opacity-90"
             style={{ background: 'var(--accent)', color: '#ffffff' }}
           >
-            Começar
-          </Link>
+            Ver planos
+          </a>
         </div>
       </nav>
 
@@ -179,13 +179,13 @@ export default function HomePage() {
 
         <Animate delay={0.5}>
           <div className="flex flex-col sm:flex-row gap-4 mb-16">
-            <Link
-              href="/signup"
+            <a
+              href="#planos"
               className="px-10 py-4 rounded-xl font-black text-base tracking-tight transition-transform hover:scale-105"
               style={{ background: 'var(--accent)', color: '#ffffff' }}
             >
-              Começar agora — é grátis
-            </Link>
+              Experimentar 7 dias grátis
+            </a>
             <a
               href="#planos"
               className="px-10 py-4 rounded-xl font-semibold text-base border transition-colors hover:border-white/30"
@@ -360,7 +360,7 @@ export default function HomePage() {
                     color: plano.destaque ? 'var(--accent)' : '#ffffff',
                   }}
                 >
-                  {plano.cta}
+                  Experimentar 7 dias grátis
                 </Link>
               </div>
             </div>
@@ -509,13 +509,13 @@ export default function HomePage() {
             Junta-te à comunidade Evolve. Sem compromissos. Cancela quando quiseres.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center relative">
-            <Link
-              href="/signup"
+            <a
+              href="#planos"
               className="px-10 py-4 rounded-xl font-black text-base bg-white transition-opacity hover:opacity-90"
               style={{ color: 'var(--accent)' }}
             >
-              Criar conta gratuita
-            </Link>
+              Experimentar 7 dias grátis
+            </a>
             <a
               href="#planos"
               className="px-10 py-4 rounded-xl font-semibold text-base border border-white/30 text-white hover:bg-white/10 transition-colors"

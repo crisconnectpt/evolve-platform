@@ -27,6 +27,7 @@ export async function completarOnboarding(formData: FormData): Promise<void> {
         mode: 'subscription',
         customer_email: user.email,
         line_items: [{ price: plan.priceId, quantity: 1 }],
+        subscription_data: { trial_period_days: 7 },
         success_url: `${process.env.NEXT_PUBLIC_APP_URL}/checkout/sucesso`,
         cancel_url: `${process.env.NEXT_PUBLIC_APP_URL}/dashboard/cliente`,
         metadata: { user_id: user.id, plano },

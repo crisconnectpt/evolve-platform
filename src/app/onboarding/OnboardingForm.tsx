@@ -229,7 +229,7 @@ export default function OnboardingForm({ nome, plano }: { nome: string; plano: s
               >
                 <div>
                   <div className="text-sm font-black" style={{ color: info.cor }}>Plano {info.nome}</div>
-                  <div className="text-xs" style={{ color: 'var(--muted-foreground)' }}>Serás redirecionado para pagamento</div>
+                  <div className="text-xs" style={{ color: 'var(--muted-foreground)' }}>7 dias grátis · depois cobrado automaticamente</div>
                 </div>
                 <div className="text-sm font-black" style={{ color: info.cor }}>{info.preco}</div>
               </div>
