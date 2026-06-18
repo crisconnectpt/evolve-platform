@@ -34,14 +34,17 @@ export async function POST(req: NextRequest) {
 
     // Subscription checkout
     if (metadata.user_id && metadata.plano) {
-      await supabase.from('subscriptions').upsert({
-        client_id: metadata.user_id,
-        stripe_customer_id: session.customer as string,
-        stripe_subscription_id: session.subscription as string,
-        plano: metadata.plano,
-        status: 'active',
-        updated_at: new Date().toISOString(),
-      }, { onConflict: 'client_id' })
+      await Promise.all([
+        supabase.from('subscriptions').upsert({
+          client_id: metadata.user_id,
+          stripe_customer_id: session.customer as string,
+          stripe_subscription_id: session.subscription as string,
+          plano: metadata.plano,
+          status: 'active',
+          updated_at: new Date().toISOString(),
+        }, { onConflict: 'client_id' }),
+        supabase.from('profiles').update({ onboarding_completo: true }).eq('id', metadata.user_id),
+      ])
     }
   }
 
